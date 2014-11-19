@@ -1,95 +1,298 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <link href="style.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="css/themes/horarios.css" />
+  <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
-    <h2>Speech Recognition Demo</h2>
-    <section>
-        <textarea id="areaResult"></textarea>
-        <textarea id="finalTranscript"></textarea>
-        <div id="mic"></div>       
-    </section>
-    <script>
-        window.onload = function () {
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>AGENDA DE HORARIOS</h1>
+    <div data-role="navbar">
+    <form method="post" action="demoform.asp">
+      <div class="ui-field-contain">
+       <input type="search"  placeholder="Buscar archivos">
+	  </div>
+    </form>
+    
+      <ul>
+        <li><a href="#"class="ui-btn-active" data-icon="home">Casa</a></li>
+        <li><a href="#pagetwo" data-icon="arrow-r">Galerias</a></li>
+      </ul>
+    </div>
+  </div>
+
+<div data-role="main" class="ui-content">
+<div data-role="collapsible">
+      <h3>Cartas</h3> 
+        <ul data-role="listview">
+            <li><a href="#mensaje"class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-b">Mensajes</a></li>
+            <li><a href="#recibe"class="ui-btn ui-icon-minus ui-btn-icon-left">Recibes</a></li>
+            <li><a href="#enviar"class="ui-btn ui-icon-plus ui-btn-icon-left">Enviar</a></li>
+            <li><a href="#eliminar"class="ui-btn ui-icon-delete ui-btn-icon-left">Eliminar</a></li>
+    	</ul>
+	</div><!-- /collapsible -->    
+
+    <div data-role="collapsible">
+          <h3>Ajustes</h3>
+        <ul data-role="listview">
+            <li><a href="#fecha"class="ui-btn ui-icon-clock ui-btn-icon-left">Fecha y hora</a></li>
+            <li><a href="#pantalla"class="ui-btn ui-icon-action ui-btn-icon-left">Pantalla</a></li>
+            <li><a href="#bateria"class="ui-btn ui-icon-alert ui-btn-icon-left">Bateria</a></li>
+            <li><a href="#teclado"class="ui-btn ui-icon-bullets ui-btn-icon-left">Teclado e idioma</a></li>
+            <li><a href="#accesi"class="ui-btn ui-icon-check ui-btn-icon-left">Accesibilidad</a></li>
+            <li><a href="#config"class="ui-btn ui-icon-info ui-btn-icon-left">Config. de Google</a></li>
+            <li><a href="#ayudar"class="ui-btn ui-icon-cloud ui-btn-icon-left">Ayudar</a></li>
+        </ul>
+     </div><!-- /collapsible -->
+    
+    <a href="#achivos" class="ui-btn ui-icon-grid ui-btn-icon-left">Mis archivos</a>
+	</div>
+</div> 
+
+<div data-role="page" id="pagetwo">
+  <div data-role="header">
+    <h1>AGENDA DE HORARIOS</h1>
+    <div data-role="navbar">
+    
+     <form method="post" action="demoform.asp">
+      <div class="ui-field-contain">
+       <input type="search"  placeholder="Buscar archivos">
+	  </div>
+    </form>
+    
+      <ul>
+        <li><a href="#pageone" data-icon="home">Casa</a></li>
+        <li><a href="#" data-icon="arrow-r">Galerias</a></li>
+      </ul>
+    </div>
+  </div>
+
+ <div data-role="main" class="ui-content">
+    <a href="#mariposa" data-rel="popup" data-position-to="window">
+    <img src="mariposaconflor.jpg" alt="Skaret View" width="200" height="200" style="width:200px;"></a>
+
+    <div data-role="popup" id="mariposa">
+      <p>Mariposa</p> 
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="mariposaconflor.jpg" alt="Skaret View" width="800" height="500" style="width:800px;height:500px;">
+    </div>
+    
+    <a href="#tigre" data-rel="popup" data-position-to="window">
+    <img src="tiger.jpg" alt="Skaret View" width="200" height="200" style="width:200px;"></a>
+
+    <div data-role="popup" id="tigre">
+      <p>Trige</p> 
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="tiger.jpg" alt="Skaret View" width="800" height="500" style="width:800px;height:500px;">
+    </div>
+    
+    <a href="#myPopup" data-rel="popup" data-position-to="window">
+    <img src="flower.jpg" alt="Skaret View" width="200" height="200" style="width:200px;"></a>
+
+    <div data-role="popup" id="myPopup">
+      <p>Flower</p> 
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="flower.jpg" alt="Skaret View" width="800" height="500" style="width:800px;height:500px;">
+    </div>
+    
+    <a href="#myPopup" data-rel="popup" data-position-to="window">
+    <img src="city.jpg" alt="Skaret View" width="200" height="200" style="width:200px;"></a>
+
+    <div data-role="popup" id="myPopup">
+      <p>City</p> 
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="city.jpg" alt="Skaret View" width="800" height="500" style="width:800px;height:500px;">
+    </div>
+  </div>
+</div>
+
+<div data-role="page" id="achivos">
+  <div data-role="header">
+    <h1>AGENDAS DE HORARIOS</h1>
+</div>
+
+<div data-role="main" class="ui-content">
+    <form method="post" action="demoform.asp">
+     <div class="ui-field-contain">
+    <input type="search"  placeholder="Buscar archivos">
+	</div>
+    </form>
+
+    <div data-role="navbar" data-grid="c">
+        <ul>
+            <li><a href="#tarea" class="ui-btn ui-icon-star ui-btn-icon-left ui-btn-active">Tareas</a></li>
+            <li><a href="#notas" class="ui-btn ui-icon-bars ui-btn-icon-left">Notas</a></li>
+            <li><a href="#correo"class="ui-btn ui-icon-cloud ui-btn-icon-left">Correo</a></li>
+            <li><a href="#calendarios" class="ui-btn ui-icon-calendar ui-btn-icon-left">Calendarios</a></li>
+        </ul>
+    </div>
+
+    <form method="post" action="demoform.asp">
+      <fieldset>
+        <select name="day" id="day" multiple="multiple" data-native-menu="false">
+          <option>Semana</option>
+          <option value="mon">Lunes</option>
+          <option value="tue">Martes</option>
+          <option value="wed">Miercoles</option>
+          <option value="thu">Jueves</option>
+          <option value="fri">Viernes</option>
+          <option value="sat">Sabado</option>
+          <option value="sun">domingo</option>
+        </select>
+        
+     </fieldset>
+     </form>
+    <a href="#download" class="ui-btn ui-btn-inline">Download</a>
+    <a href="#video" class="ui-btn ui-btn-inline">Videos</a>
+    <a href="#nueva" class="ui-btn ui-btn-inline">Nueva carpeta</a>
+   </div>
+</div>
+
+
+<div data-role="page" id="mensaje">
+    <div data-role="header">
+        <h1>AGENDA DE HORARIOS</h1>
+        <div data-role="navbar">
+            <form method="post" action="demoform.asp">
+            <div class="ui-field-contain">
+                <input type="search"  placeholder="Buscar archivos">
+            </div>
+            </form>
+        </div>  
+    </div>
+   
+    <div data-role="main" class="ui-content">
+          <form method="post" action="demoform.asp">
+          <fieldset data-role="collapsible" data-theme="b" data-content-theme="b">
+            <legend>Escribir mensaje de texto</legend>
+              <label for="name">Nombre completo:</label>
+              <input type="text" name="text" id="name" data-theme="a">
+            <input type="submit" data-inline="true" value="Submit" data-theme="b">
+          </fieldset>
+        </form>
+    </div>
+</div>
+
+
+<div data-role="page" id="recibe">
+   <div data-role="header">
+    <h1>....</h1>
+   </div>
+   <div data-role="main" class="ui-content">
+    <form method="post" action="demoform.asp">
+      <div class="ui-field-contain">
+        <label for="info">Additional Information:</label>
+        <textarea name="addinfo" id="info"></textarea>
+      </div>
+      <input type="submit" data-inline="true" value="Submit">
+    </form> 
+   </div>
+</div>
  
-            var recognition = new webkitSpeechRecognition();
-            recognition.continuous = true;
-            recognition.interimResults = true;
-            recognition.lang = "es";
- 
- 
-            mic.addEventListener('click', function () {
-                areaResult.focus();
-                recognition.start();
-            });
- 
-            //events
- 
-            recognition.onaudiostart = function (event) {
-                console.log("onaudiostart");
-            };
- 
-            recognition.onsoundstart = function (event) {
-                console.log("onsoundstart");
-            };
- 
-            recognition.onspeechstart = function (event) {
-                console.log("onspeechstart");
-            };
- 
-            recognition.onspeechend = function (event) {
-                console.log("onspeechend");
-            };
- 
-            recognition.onsoundend = function (event) {
-                console.log("onsoundend");
- 
-            };
- 
-            recognition.onaudioend = function (event) {
-                console.log("onaudioend");
- 
-            };
- 
-            recognition.onresult = function (event) {
-                console.log("onresult");
-                var interimResult = '',
-                    finalResult = '';
-                for (var i = event.resultIndex; i < event.results.length; ++i) {
-                    if (event.results[i].isFinal) {
-                        finalResult = event.results[i][0].transcript;
-                    } else {
-                        interimResult += event.results[i][0].transcript;
-                    }
-                }
- 
-                finalTranscript.value = finalResult;
-                areaResult.value = interimResult;
- 
-                if (interimResult.indexOf('terminar') != -1)
-                    recognition.stop();
-            };
- 
-            recognition.onnomatch = function (event) {
-                console.log("onnomatch");
-            };
- 
-            recognition.onerror = function (event) {
-                console.log("onerror: " + event);
- 
-            };
- 
-            recognition.onstart = function (event) {
-                console.log("onstart");
-            };
- 
-            recognition.onend = function (event) {
-                console.log("onend");
-            };
- 
-        };
-    </script>
+
+<div data-role="page" id="enviar">
+   <div data-role="header">
+     </div>
+    <div data-role="main" class="ui-content">
+  </div>
+</div>
+   
+   
+<div data-role="page" id="eliminar">
+   <div data-role="header">
+    <h1>....</h1>
+     </div>
+     
+  <div data-role="main" class="ui-content">
+    <a href="#myPopup" data-rel="popup" class="ui-btn" data-transition="fade">Fade</a>
+    <a href="#myPopup" data-rel="popup" class="ui-btn" data-transition="flip">Flip</a>
+    <a href="#myPopup" data-rel="popup" class="ui-btn" data-transition="flow">Flow</a>
+    <a href="#myPopup" data-rel="popup" class="ui-btn" data-transition="pop">Pop</a>
+   <div data-role="popup" id="myPopup" class="ui-content">
+      <p>X</p>
+    </div>
+  </div>
+  </div>
+
+<div data-role="page" id="fecha">
+   <div data-role="header">
+     </div>
+    <div data-role="main" class="ui-content">
+  </div>
+</div>
+
+
+<div data-role="page" id="pantalla">
+   <div data-role="header">
+    <h1>....</h1>
+     </div>
+    
+  <div data-role="main" class="ui-content">
+    <p>Normal / Default button:</p>
+    <a href="#pagetwo" class="ui-btn">Go to Page Two</a>
+    <p>Inline button:</p>
+    <a href="#pagetwo" class="ui-btn ui-btn-inline">Go to Page Two</a>
+
+    <a href="#pageone" class="ui-btn ui-btn-inline">Fondo</a>
+    <a href="#pageone" class="ui-btn ui-btn-inline">Galerias</a>
+    <a href="#pageone" class="ui-btn ui-btn-inline">Animacion</a>
+  </div>
+</div>
+   
+   
+<div data-role="page" id="bateria">
+   <div data-role="header">
+     </div>
+    <div data-role="main" class="ui-content">
+  </div>
+</div>
+
+
+<div data-role="page" id="teclado">
+   <div data-role="header">
+     </div>
+    <div data-role="main" class="ui-content">
+  </div>
+</div>
+
+
+<div data-role="page" id="accesib">
+   <div data-role="header">
+     </div>
+    <div data-role="main" class="ui-content">
+  </div>
+</div>
+
+
+<div data-role="page" id="config">
+   <div data-role="header">
+     </div>
+    <div data-role="main" class="ui-content">
+  </div>
+</div>
+
+
+<div data-role="page" id="ayudar">
+    <div data-role="panel" id="myPanel">
+     <h2>Panel Header</h2>
+    <p>You can close the panel by clicking outside the panel, pressing the Esc key, 
+    by swiping, or by clicking the button below:</p>
+    <a href="#" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+  </div> 
+
+   <div data-role="header">
+    <h2>AGENDA DE HORARIOS</h2>
+     </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Click on the button below to open the Panel.</p>
+    <a href="#myPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a>
+  </div>
+</div>
+
+
 </body>
 </html>
